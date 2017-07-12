@@ -3,91 +3,16 @@
     <section class="no-padding" id="portfolio">
       <div class="container-fluid">
         <div class="row no-gutter popup-gallery">
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-4 col-sm-6" v-for="item in portfolio">
             <div class="portfolio-box" style="cursor: pointer;">
-              <img src="/static/img/portfolio/1.jpg" class="img-responsive" alt="">
+              <img :src="item.image" class="img-responsive" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Javascript
+                    {{ item.title }}
                   </div>
                   <div class="project-name">
-                    NodeJS, AdonisJS, VueJS, Meteor, SailsJS, JQuery
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="portfolio-box" style="cursor: pointer;">
-              <img src="/static/img/portfolio/2.jpg" class="img-responsive" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    PHP
-                  </div>
-                  <div class="project-name">
-                    Laravel, CakePHP
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="portfolio-box" style="cursor: pointer;">
-              <img src="/static/img/portfolio/3.jpg" class="img-responsive" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Devops
-                  </div>
-                  <div class="project-name">
-                    Linux (CentOS, Debian), MacOS
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="portfolio-box" style="cursor: pointer;">
-              <img src="/static/img/portfolio/4.jpg" class="img-responsive" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Cloud
-                  </div>
-                  <div class="project-name">
-                    AWS, Digital Ocean, Heroku, RackSpace
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="portfolio-box" style="cursor: pointer;">
-              <img src="/static/img/portfolio/5.jpg" class="img-responsive" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Mobile
-                  </div>
-                  <div class="project-name">
-                    iOS, Android, Ionic, NativeScript
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class="portfolio-box" style="cursor: pointer;">
-              <img src="/static/img/portfolio/6.jpg" class="img-responsive" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Database
-                  </div>
-                  <div class="project-name">
-                    MySql, MongoDB, PostgreSQL
+                    {{ item.description }}
                   </div>
                 </div>
               </div>
@@ -102,7 +27,40 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      portfolio: [
+        {
+          image: '/static/img/portfolio/1.jpg',
+          title: 'Javascript',
+          description: 'NodeJS, AdonisJS, VueJS, Meteor, SailsJS, JQuery',
+        },
+        {
+          image: '/static/img/portfolio/2.jpg',
+          title: 'PHP',
+          description: 'Laravel, CakePHP',
+        },
+        {
+          image: '/static/img/portfolio/3.jpg',
+          title: 'Devops',
+          description: 'Linux (CentOS, Debian), MacOS',
+        },
+        {
+          image: '/static/img/portfolio/4.jpg',
+          title: 'Cloud',
+          description: 'AWS, Digital Ocean, Heroku, RackSpace',
+        },
+        {
+          image: '/static/img/portfolio/5.jpg',
+          title: 'Mobile',
+          description: 'iOS, Android, Ionic, NativeScript',
+        },
+        {
+          image: '/static/img/portfolio/6.jpg',
+          title: 'Database',
+          description: 'MySql, MongoDB, PostgreSQL',
+        },
+      ],
+    };
   },
 };
 </script>
